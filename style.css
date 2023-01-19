@@ -1,0 +1,681 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: poppins,sans-serif;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+/*النقطة لاننا استخدمنا كلاس اما اذ استخدمنا id نستخدم #  */
+/* عرض الصفحة كلها اذ 100ياخذ*/
+/* MIn height VH  اي منفذ عرض 100 من جهز العرض */
+.header{
+    width: 100%;
+    min-height:100vh;
+    background-image: linear-gradient(rgba(4,9,30,0.4),rgba(4,9,30,0.4)),url(som-img/a1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+nav{
+    display: flex;
+    /*يضع عناصر القائمة متجاورة */
+    justify-content:space-between;
+    /*مساحة بين العناصر */
+    align-items: center;
+    padding: 5px 20px;
+    /*موقع الكلمات الهوم و ...من اعلى 5 ومن الجانب 20 */
+    position:relative;
+    /*للتحكم في عناصر الناف */
+    width: 100%;
+    z-index: 999;
+
+}
+nav img{
+    width: 100px;
+    min-height: 100px;
+    border-radius: 50%;
+    transition: 0.7s
+}
+nav img:hover{
+    transform: rotate(360deg);
+    /*التفاف الوكو*/
+}
+.nav-link{
+    flex: 1;
+    text-align: right;
+}
+.nav-link ul li{
+    display:inline-block;
+    /* تكون بسطر واحد عناصر الهوم*/
+    padding: 10px 15px;
+    list-style: none;
+    position: relative;
+    margin-bottom: 15px; 
+}
+.nav-link ul li a{
+    /* للتحكم بالكتابة ب عناصر الهوم */
+    text-decoration: none;
+    font-size: 25px;
+    color: rgb(253, 0, 55);
+}
+.nav-link ul li::after{
+    /*بالخط الازرق تحت الكتابة*/
+    content: "";
+    width: 0%;
+    height: 2px;
+    margin: auto;
+    display: block;
+    background: rgb(0, 106, 255);
+    transition: 0.7s;
+}
+.nav-link ul li:hover::after{
+    width: 100%;
+}
+.text{
+    /* مطعم سومر*/
+    position: absolute;
+    width: 90%;
+    text-align: center;
+    flex-direction: column;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+   /*لون الكتابة */
+    color: white;
+    display: block;
+}
+.text h1{
+    font-size: 60px;
+    font-weight: 600;
+}
+.text p{
+    /* حجم الكتابة مطعم سومر*/
+    font-size: 20px;
+    margin: 30px 0 ;
+}
+.btn{
+    /*للتحكم ب اضغط هنا */
+    color: rgb(146, 140, 139);
+    font: 20px;
+    border-radius: 10px;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: inline-block;
+    border-bottom: 1px solid white;
+}
+.btn:hover{
+    background: rgb(0, 106, 255);
+    transition: 0.7s;
+    border:rgb(0, 106, 255);
+}
+nav.fa-solid{
+    display: none;
+}
+@media(max-width:700px)
+/*لعرض الصورة في الشاشات الصغيرة */
+{
+    .text h1{
+        font-size: 25px;
+    }
+    .nav-link{
+     width: 200px;
+     height: 100vh;
+     display: block;
+     position: absolute;
+     background:rgb(0, 106, 255);
+     top: 0;
+     right: 0;
+     z-index: 2;
+     text-align: left;
+     
+    }
+    .nav-link ul li{
+     display: block;/*لتكون كل كلمة في سطر عناصر الهوم*/
+     top: 10px;
+     left: 10;
+     
+    }
+
+    nav .fa-solid{
+        display: block;
+        font-size: 30px;
+        margin: 10px;
+        color: white;
+    }
+    .fa-bars{
+        position: relative;
+        bottom: 20px;
+        left: 5px;
+    }
+}
+/*السكشن الثاني courses--------------------*/
+
+
+
+.Our{
+    display: flex;
+    justify-content: center;/*محاذاة للعناصر الافقية */
+    align-items: center;
+    flex-direction: column;/*اتجاة الكتابة عامودي*/
+    margin: 20px 0;/*بعد الكتابة عن الصورة*/
+    text-align: center;
+}
+
+.Our h1{
+    font-size: 50px;
+    font-weight: 200;
+    color: rgb(7, 3, 245);
+}
+.Our p{
+    
+    font-size: 16px;
+    color: rgb(243, 5, 5);
+    margin-top: 10px;
+}
+/*تعديل الكارتات الثلاث حلويات مشاوي مقبلات */
+.row{
+    /*التحكم بالكتابة */
+    display: flex;
+    justify-content: space-between;/*مسافة بين عنصر واخر */
+    align-items: center;
+    text-align: center;
+    position: relative;
+    top: 50px;
+    margin-bottom: 25px;
+    width: 90%;
+}
+.column{
+    flex-basis: 30%;/*حجم المربع*/
+    background: rgba(83, 188, 241, 0.4);
+    border-radius: 25px;/*حافات المربع*/
+    padding: 25px 25px;
+    transition: 0.7s;
+   
+}
+/* الشدو حول المربع*/
+.column:hover{
+    box-shadow:0 0 50px 0 rgba(0, 106, 255,04);
+}
+
+
+/*@media (max-width:900px){
+    .row{
+        flex-direction: column;
+    }*/
+/*نهاية المقطع الثاني للصفحة الاولى المتضمن المربعات الثلاث*/
+/*المقطع الثالث في الصفحة المتضمن صور الاكلات اعداد مطعم سومر */
+/*اسم الكلاس dishes*/
+.dishes{
+    display: flex;
+    justify-self: start;
+    align-items: center;/*توسيط الكتابة */
+    flex-direction: column;
+    text-align: center;
+    margin: 90px 0;
+
+}
+.dishes h3{
+    font-size: 40px; /*Distinctive food اكلات مميزة*/
+    font-weight: 200;
+}
+.dishes p{
+    font-size: 16px;
+    color: #777;
+    margin-top: 20px;
+}
+.column2 {
+    flex-basis: 25%;
+    border-radius:15px ;
+    overflow: hidden;
+    position: relative;
+    bottom: 30px;
+    border-radius: 25px
+}
+
+.column3 {
+    flex-basis: 25%;
+    border-radius:15px ;
+    overflow: hidden;
+    position: relative;
+    bottom: 30px;
+}
+img{
+    width: 100%;
+}
+.heading{
+    width: 100%;  /*  الكلمة اطلب الان 100% حتى تاخذ الكتابة مساحة */
+    height: 100%;
+    background: transparent;
+    position: absolute;/* عندما استخدم ابسليوت اتحكم بالتوب والفت */
+    top: 0;
+    left: 0;
+    transition: 0.5s;/*مدة ضهور الكتابة على الصورة*/
+}
+.heading h3{/*order now*/
+    position: absolute;
+    bottom: 0;
+    left: 35%;
+    font-size: 25px;
+    font-weight: 500;
+    color: white;
+    opacity: 0;
+    transition: 0.5s;
+}
+.heading:hover{ /*فيد */
+    background-color: rgba(27, 3, 245, 0.137);
+}
+.heading:hover h3{/*تضهر عند الضغطorder now*/
+    bottom: 49%;
+    opacity: 1;
+}
+
+/*اراى الزور مع النجوم والصور*/
+
+.customer{/*الجزء اسفل الخط*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 100px 0;
+    text-align: center;
+}
+.customer h1{
+    font-size: 40px;
+    font-weight: 200;
+}
+.customer p{
+    font-size: 16;
+    color: #777;
+}
+.review{/*اعداد الصور للمعلقين والمربعات*/
+    flex-basis: 55%;
+    display: flex;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+    width: 70%;
+    background: rgba(141, 190, 239, 0.4);
+    border-radius: 50px;
+    margin: 5px;
+ }
+ .review img{
+     height: 55px;
+     width: 35px;
+     margin-left: 15px;
+     margin-right: 20px;
+     border-radius: 50%; 
+ }
+
+ .review p{
+     font-size: 13px;
+     font-weight: 400;
+ }
+ .fa-solid{/*النجوم*/
+    color: rgb(233, 236, 8);
+    cursor: pointer;
+  
+ }
+ .enroll{/*اعداد الجزء اسفل التعليق */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    flex-direction: column;
+    background-image: linear-gradient(rgba(56, 19, 219, 0.671),rgba(174, 147, 236, 0.7)),url(som-img/min.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 50%;/*عرض الصورة */
+    margin:50px auto ;
+    padding: 20px 0;
+    text-align: center;
+}
+.enroll h1{/*الصورة لمطعم سومر اطلب الن */
+    color: white;
+    font-size: 50px;
+    margin: 20px;
+}
+/*@media (max-width:700px){
+    .enroll h1{
+        font-size: 20px;
+    }*/
+
+
+   
+
+
+
+    
+.footer{/*الجزء الخاص ب اسفل الصفحة المواقع الالكترونية */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin:50px 0 25px;
+    padding: 10px 30px;
+    text-align: center;
+}
+.footer h4{
+    font-size: 20px;
+    font-weight: 300;
+    padding: 50px 0 25px;
+}
+.footer p{
+    color: #777;
+    line-height: 30px;
+}
+.social{
+    margin:50px 0 20px;
+}
+.social .fa{
+    margin: 0 20px;
+}
+.social .fa-facebook{
+    color: rgb(73, 97, 248);
+    cursor: pointer;
+}
+.social .fa-twitter{
+    color:rgb(73, 166, 248) ;
+    cursor: pointer;
+}
+.social .fa-linkedin{
+    color: blue;
+    cursor: pointer;
+}
+.social .fa-youtube{
+    color: red;
+    cursor: pointer;
+}
+/*--------------------الفحة الثانية FOOD*********-----*/
+
+.product .box-container{/*تعديل ابعاد البوكس*/
+  display: flex;
+  margin: 80px 0;
+  flex-wrap: wrap-reverse;
+  gap:3rem;/*المسافة بين الصور */
+}
+
+.product .box-container .box{
+  flex:1 1 30rem;
+  border:.1rem solid rgba(0,0,0,.3);
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);/*الضل حول المربع*/
+  text-align: center;/*محاذات الكتابة */
+  position: relative;
+  overflow: hidden;
+}
+
+.product .box-container .box img{
+  margin: 10px 0;
+  height: 10rem;/*حجم الصورة */
+  width:100%;/*حجم الصورة داخل البوكس*/
+  border-bottom:0.5rem solid rgba(4, 96, 235, 0.3);
+  object-fit: calc(100);/*تدوير الصورة*/
+}
+
+.product .box-container .box .discount{/*اعداداد الخصم */
+  position: absolute;
+  top:1rem; left:1rem;
+  background:rgba(0,255,0,.1);
+  color:white;
+  font-size: 2rem;
+  padding:.5rem 1rem;
+}
+
+
+.product .box-container .box h3{/*التحكم بالكتابة اسف*/
+  color:rgb(243, 8, 8);
+  font-size: 2rem;
+  margin: 2px 0;
+  padding:1rem 0;
+}
+
+.product .box-container .box .stars i{/*النجوم */
+  color:gold;
+  font-size: 2rem;
+}
+
+.product .box-container .box .quantity{
+  padding: 0.5em;
+}
+
+
+
+.product .box-container .box .quantity input{/*التحكم بمربع العدد*/
+  font-size: 1rem;
+  padding: 0.1em 0.5em;
+  text-align: center;
+  background:rgba(0,0,0,.1);
+}
+
+.product .box-container .box .price{/*السعر */
+  font-weight: bolder;
+  color:var(--primary);
+  font-size: 1.5rem;
+}
+
+.product .box-container .box .price span{/*السعر القديم*/
+  text-decoration: line-through;
+  color:#999;
+  font-size: 1rem;
+}
+
+/*نهاية الصفحة الثانية */
+
+/*الصفحة الثالثة العنوان البداية */
+.contact .row{
+  display: flex;
+
+  flex-wrap: wrap-reverse;/*الخارطة اسفل المعلومات*/
+  border:.1rem solid rgba(0,0,0,.3);
+}
+
+.contact .row .map{
+  width:50%;
+  display: flex;
+  flex:0 0 20rem;
+  position: absolute;
+  top:1rem; 
+  scroll-padding-inline-start: initial;
+}
+
+.contact .row form{
+  padding:1rem;
+  flex:1 1 40rem;
+}
+
+.contact .row form .inputBox{
+  position: relative;
+}
+
+.contact .row form .inputBox input, .contact .row form .inputBox textarea{
+  width:50%;/*حجم المربعات */
+  border-bottom: .1rem solid rgba(6, 62, 243, 0.3);
+  padding:1rem 0;
+  margin:1.5rem 0;
+  font-size: 1.7rem;
+  text-transform: none;
+  color:#333;
+}
+
+.contact .row form .inputBox textarea{
+  resize: none;
+  height:10rem;
+}
+
+.contact .row form .inputBox input:focus,
+.contact .row form .inputBox textarea:focus{
+  border-color: var(--primary);
+}
+
+.contact .row form .inputBox label{
+  position: absolute;
+  top:2.3rem; left:0;/*موقع الكتابة*/
+  font-size: 1.7rem;
+}
+
+
+
+
+
+
+/*الجزء الخاص بالصفحات والصور */
+
+
+.food{
+    width: 100%;
+    min-height:100vh;
+    background-image: linear-gradient(rgba(245, 245, 245, 0.4),rgba(4,9,30,0.4)),url(som-img/a2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.order{
+    
+        width: 100%;
+        min-height:90vh;
+        background-image: linear-gradient(rgba(245, 245, 245, 0.4),rgba(4,9,30,0.4)),url(som-img/a00.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+    
+
+    .about{
+        width: 100%;
+        min-height:90vh;
+        background-image: linear-gradient(rgba(245, 245, 245, 0.4),rgba(4,9,30,0.4)),url(som-img/a15.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;}
+    
+
+
+
+
+/*مواقع التواصل */
+
+
+
+
+.text1 .text2 {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    float: left;
+    margin: 0 5px;
+    overflow: hidden;
+    background: #ffff;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-out;
+}
+
+.text1 .text2:hover {
+    width: 200px;
+}
+
+.text1 .text2 .text3 {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    border-radius: 50px;
+    box-sizing: border-box;
+    line-height: 60px;
+    transition: all 0.3 ease-out;
+}
+
+.text1 .text2:nth-child(1):hover .text3{
+    background: #4065b1;
+}
+
+.text1 .text2:nth-child(2):hover .text3{
+    background: #f60002;
+}
+
+            .text1 .text2:nth-child(3):hover .text3{
+    background: #fb3c7c;
+}            
+
+.text1 .text2:nth-child(4):hover .text3{
+    background: #1c9cea;
+}
+
+
+.text1 .text2:nth-child(5):hover .text3{
+    background: #058f2e;
+}
+
+
+.text1 .text2 .text3 a {
+    color: #000;
+    font-size: 25px;
+    line-height: 60px;
+    transition: all 0.3s ease-out;
+}
+
+.text1 .text2:hover .text3 a {
+    color: white;
+}
+
+.text1 .text2 span {
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 60px;
+    margin-left: 10px;
+}
+
+.text1 .text2:nth-child(1) span{
+   color: #4065b1;
+}
+
+.text1 .text2:nth-child(2) span{
+    color: #f60002;
+}
+
+.text1 .text2:nth-child(3) span{
+    color: #fb3c7c;
+}            
+
+.text1 .text2:nth-child(4) span{
+    color: #1c9cea;
+}
+
+
+.text1 .text2:nth-child(5) span{
+    color: #058f2e;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
